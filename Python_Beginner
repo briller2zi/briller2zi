@@ -1,1 +1,1918 @@
-
+#day 1)
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyPh7hH+i4bVsc4YUygnqkph"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#백슬래시"
+      ],
+      "metadata": {
+        "id": "jvZJTYnHoCKV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YVA7QFTuLfPP",
+        "outputId": "e73ed21f-060e-47de-8f95-6e66a2a5d8df"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "python's favorite is perl\n",
+            "\"Python is very easy\"\n",
+            "Mommy's cookies\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 백슬래시의 활용\n",
+        "# 백슬래시 뒤에 오는 작은따옴표나 큰따옴표는 문자열을 둘러싸는 기호가 아니라 그 자체의 특수문자\n",
+        "print('python\\'s favorite is perl')\n",
+        "print(\"\\\"Python is very easy\\\"\")\n",
+        "print('Mommy\\'s cookies')\n",
+        "# 역슬래시의 위치는 기호가 아닌 문자로 인식하려는 따옴표 앞에서 \\"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#문자열 포매팅"
+      ],
+      "metadata": {
+        "id": "kwzGZ4jYoBP-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 숫자열 포맷 코드는 %d이다.\n",
+        "print(\"I eat %d apples.\" %4)\n",
+        "\n",
+        "number = 7\n",
+        "print(\"I eat %d pineapples.\" %number)"
+      ],
+      "metadata": {
+        "id": "oKKo5qrhHjao",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "07d3fe1a-b911-487e-a5af-bbf50f3283c2"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I eat 4 apples.\n",
+            "I eat 7 pineapples.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 문자열 바로 대입\n",
+        "# 문자열 포맷 코드 %s\n",
+        "print(\"I have %s apples.\" %\"three\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SuNX5j5WoqbT",
+        "outputId": "f8ef738a-10c8-41b9-bdf1-cb857d3de938"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I have three apples.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 문자열 포맷코드 알아두기\n",
+        "# 문자열(string) = %s\n",
+        "# 문자 1개(character) = %c\n",
+        "# 정수(integer) = %d\n",
+        "# 부동소수(floating-point) = %f\n",
+        "# % 자체 : %%"
+      ],
+      "metadata": {
+        "id": "epTX4GPuqjsQ"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 문자열 포맷팅 (= %)의 활용\n",
+        "# 1. 정렬과 공백\n",
+        "print(\"%11s\" %\"hi\") # 작성할 문자열 포함하여 11글자의 자리수를 차지 => 나머지는 공백으로 처리\n",
+        "print(\"%-11s\" %\"hi\")\n",
+        "print(\"%-11sjane\" %'hi')\n",
+        "# 이때 정수를 사용할 경우 문자열은 오른쪽에 위치\n",
+        "# 음수를 사용할 경우 왼쪽에 문자열 위치\n",
+        "# 또한 두 개의 문자열을 입력하고자 할 때 하나는 포맷팅과 연결시켜야 한다.\n",
+        "# 포맷팅 기본 구문: (\"%글자수와형식\" %\"작성할데이터\") -> 단 숫자일 땐 \"\" 제외\n",
+        "print(\"%11s\" %\"Good\")\n",
+        "print(\"%12d\" %16)\n",
+        "print(\"%13shi\" %13) # 서로 다른 데이터타입도 가능"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oO23vtL3q9cr",
+        "outputId": "003ef6df-5714-4dee-db13-6e3c372ebbe1"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "         hi\n",
+            "hi         \n",
+            "hi         jane\n",
+            "       Good\n",
+            "          16\n",
+            "           13hi\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. 소수점 표현하기\n",
+        "print(\"%0.5f\" %2.43243234) # 소수점 다섯자리까지\n",
+        "print(\"%11.5f\" %2.43243234) # 11자리수인데 소수점은 5자리수\n",
+        "# 소수점 표현 기본형식\n",
+        "# \"%숫자.숫자f\" %입력을 원하는 숫자\n",
+        "# 첫번째 숫자에 0을 입력하는 경우 필요한 경우 소수점 앞에 0을 추가하는 것을 의미한다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SB9v25XYrIE-",
+        "outputId": "df71885d-5e35-49d2-9df5-a4de40f88792"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2.43243\n",
+            "    2.43243\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#문자열 관련 함수"
+      ],
+      "metadata": {
+        "id": "pUglNs_f06gS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = \"hobby\"\n",
+        "print(a.count('y'))\n",
+        "# count() 함수는 문자의 개수를 세는 함수이다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CSiSgazmzUPx",
+        "outputId": "fc152f92-eced-4bf7-81a0-e59b0b96318c"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = \"Python is the best choice\"\n",
+        "print(a.find('e'))\n",
+        "print(a.find('k'))\n",
+        "# find 함수는 찾는 문자열이 처음 나온 위치를 반환한다\n",
+        "# 단, 없는 경우에는 -1을 반환한다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "h5xO9TPN1APh",
+        "outputId": "d130f34a-bc94-454a-f2fa-f042bd5ca858"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "12\n",
+            "-1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# find vs. index\n",
+        "a = \"Life is too short\"\n",
+        "print(a.find(\"z\"))\n",
+        "# print(a.index(\"z\"))\n",
+        "\n",
+        "# find 함수는 없는 값을 -1로 반환하는 반면 index 함수는 찾는 값이 없을 경우 에러를 발생시킨다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EkOC7LwH1Mbh",
+        "outputId": "006efbdd-7853-424e-ea88-f8c25d7378f0"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\",\".join(\"cake\"))\n",
+        "# 구분자.join(값)\n",
+        "my_list = [\"Hello\", \"world\", \"how\", \"are\", \"you?\"]\n",
+        "result = \" \".join(my_list)\n",
+        "print(result)\n",
+        "print(my_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LwHfNYpB1yqc",
+        "outputId": "9e876282-7e4f-48c6-decd-0fd7e81fcccc"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "c,a,k,e\n",
+            "Hello world how are you?\n",
+            "['Hello', 'world', 'how', 'are', 'you?']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# split\n",
+        "# 공백 또는 특정 문자열을 구분자로 해서 문자열 분리\n",
+        "# 분리된 문자열은 리스트로 반환\n",
+        "print(a.split())\n",
+        "b = \"a:b:c:d\"\n",
+        "print(b.split(':'))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6VFGAd-p2nC8",
+        "outputId": "be9cfd49-f367-4e84-fd86-7f6065858cea"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['Life', 'is', 'too', 'short']\n",
+            "['a', 'b', 'c', 'd']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 리스트 자료형"
+      ],
+      "metadata": {
+        "id": "xZ0tkLEg3KCJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 리스트 요솟값 간의 덧셈 -> 가능하다\n",
+        "a = [2, 3, 4]\n",
+        "print(a[0] + a[2])\n",
+        "b = ['a', 'b', 'c']\n",
+        "print(b[0] + b[1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tmM1J28A29V0",
+        "outputId": "e3c93c4e-e246-4b4b-d9be-86a39e96c46a"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n",
+            "ab\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 리스트 내에 리스트가 있는 경우\n",
+        "a = [2, 3, 4, ['a', 'b', 'c']]\n",
+        "print(a[-1][0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_GYCoja8rSv4",
+        "outputId": "1dfb488c-67ed-474b-ef9c-3b3f6cc823e8"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "a\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 리스트 값 수정\n",
+        "a = [1, 2, 3, 4, 5]\n",
+        "print(a)\n",
+        "a[2] = 7\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HvKH8TlOroq0",
+        "outputId": "1ee517d3-9330-462e-db55-58747e4c0e2a"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5]\n",
+            "[1, 2, 7, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 리스트 요소 삭제\n",
+        "del a"
+      ],
+      "metadata": {
+        "id": "GLgK4JH1sIXI"
+      },
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = [1, 3, 5, 7]\n",
+        "a.append(9)\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gteUvlBjsQJa",
+        "outputId": "42169ad5-d2a3-43c3-d9f2-b6c0d4425975"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 5, 7, 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = [1, 3, 5, 7]\n",
+        "# print(a.sort()) -> 이렇게 작성할 경우 None 값이 출력\n",
+        "# 유의점: sort() 메서드는 원래 리스트를 정렬하고 변경하고, 정렬된 결과를 반환하지 않는다\n",
+        "\n",
+        "a.sort()\n",
+        "print(a)\n",
+        "a.reverse()\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8wPVEKSdsh3z",
+        "outputId": "4d13f643-a8f0-422d-e083-49b9d51c7016"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 5, 7]\n",
+            "[7, 5, 3, 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# insert과 extend의 비교\n",
+        "a = [1, 3, 5]\n",
+        "a.insert(3, 7)\n",
+        "print(a)\n",
+        "\n",
+        "b = [1, 3, 5]\n",
+        "b.extend([7, 9])\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "riWedvFs99B4",
+        "outputId": "72a1d7d9-9ed6-48da-8d4e-23699e938c35"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 3, 5, 7]\n",
+            "[1, 3, 5, 7, 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#튜플 및 딕셔너리"
+      ],
+      "metadata": {
+        "id": "VLJ9PgVlFLEq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 리스트는 대괄호로 둘러싸여 있으며 생성, 삭제, 수정이 가능하다\n",
+        "# 튜플은 소괄호로 둘러싸여 있으며 값 변경이 불가능하다 (=요솟값은 한번 정하면 지울 수 없다)\n",
+        "\n",
+        "t1 = (1, 3, 'a', 'b')\n",
+        "print(t1[0])\n",
+        "print(t1[2])\n",
+        "print(t1[1:3])\n",
+        "\n",
+        "t2 = (5, 7)\n",
+        "print(t2 * 3) # 반복\n",
+        "print(t1 + t2) # 결합\n",
+        "print(len(t1))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0bSkRWCEFbb6",
+        "outputId": "c295c320-8536-4d4b-c261-8be9ee6b3192"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "a\n",
+            "(3, 'a')\n",
+            "(5, 7, 5, 7, 5, 7)\n",
+            "(1, 3, 'a', 'b', 5, 7)\n",
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 딕셔너리\n",
+        "a = {1 : 'a', 2 : 'b', 3 : 'c'}\n",
+        "print(a[2]) # 딕셔너리는 제로 인덱싱이 아니다\n",
+        "\n",
+        "del a[3]\n",
+        "print(a)\n",
+        "\n",
+        "print(a.values())\n",
+        "print(a.items())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t9ViyeZKFq8k",
+        "outputId": "322f587b-f864-45e0-c6bc-906fb90ab327"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "b\n",
+            "{1: 'a', 2: 'b'}\n",
+            "dict_values(['a', 'b'])\n",
+            "dict_items([(1, 'a'), (2, 'b')])\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = {'name' : 'james','phone':'01193837257', 'birth' : '0109'}\n",
+        "print('name' in a)\n",
+        "print('emial' in a)\n",
+        "print(a.get('name'))\n",
+        "print(a.get('hello'))\n",
+        "print(a.get('hello', 'no data'))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vzluP-MHGZBC",
+        "outputId": "bf80a2b8-82a9-4c47-a8d4-a644b501d76d"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n",
+            "False\n",
+            "james\n",
+            "None\n",
+            "no data\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 집합 자료형과 변수"
+      ],
+      "metadata": {
+        "id": "aeIXqcIaHcQw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 집합(set)은 집합과 관련된 것을쉽게 처리하기 위해 만든 자료이다\n",
+        "s1 = set([1, 3, 5])\n",
+        "print(s1)\n",
+        "\n",
+        "s2 = set(\"Jelly\")\n",
+        "print(s2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tXqi-Xg-G-fq",
+        "outputId": "45b6fecd-4438-4542-c048-60c2beceeef2"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 3, 5}\n",
+            "{'e', 'y', 'J', 'l'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(s1)\n",
+        "\n",
+        "s1.add(2)\n",
+        "print(s1)\n",
+        "\n",
+        "s1.remove(3)\n",
+        "print(s1)\n",
+        "\n",
+        "s1.remove(2)\n",
+        "print(s1)\n",
+        "\n",
+        "# 딕셔너리의 데이터 삭제는 쉽게 생각해서 원인덱스 기반\n",
+        "# 집합의 삭제는 그 해당 값이 삭제 (없을 경우는 에러 발생)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vBRbXaGCJClq",
+        "outputId": "a592ac8a-cbbf-4b0d-eaea-2dbe1549cffc"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 3, 5}\n",
+            "{1, 2, 3, 5}\n",
+            "{1, 2, 5}\n",
+            "{1, 5}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 변수를 다양하게 만드는 방법\n",
+        "# 1) 튜플\n",
+        "a, b = ('python', 'tuple')\n",
+        "print(a, b)\n",
+        "\n",
+        "(c, d) = 'python', 'tuple'\n",
+        "print(c, d)\n",
+        "\n",
+        "[e, f] = ['python', 'life']\n",
+        "print(e, f)\n",
+        "\n",
+        "a, b = b, a\n",
+        "print(a, b)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zFWVT8MpJUbj",
+        "outputId": "6aeda1ce-7965-4941-e1bd-dc7a6f75ab6b"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "python tuple\n",
+            "python tuple\n",
+            "python life\n",
+            "tuple python\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#불 자료형"
+      ],
+      "metadata": {
+        "id": "razmSbIpK5qz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num1 = 0\n",
+        "num2 = 10\n",
+        "\n",
+        "if num1:\n",
+        "    print(\"num1은 참입니다.\")\n",
+        "else:\n",
+        "    print(\"num1은 거짓입니다.\")\n",
+        "\n",
+        "if num2:\n",
+        "    print(\"num2는 참입니다.\")\n",
+        "else:\n",
+        "    print(\"num2는 거짓입니다.\")\n",
+        "\n",
+        "# 결론: 숫자형에서 0은 False로, 나머지는 True로 인식된다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NtFy6GDfK8Cb",
+        "outputId": "40dcfef1-70ef-42b2-9a91-f5c3cb2773c7"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "num1은 거짓입니다.\n",
+            "num2는 참입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "str1 = ''\n",
+        "str2 = 'Hello, World!'\n",
+        "\n",
+        "if str1:\n",
+        "    print(\"str1은 참입니다.\")\n",
+        "else:\n",
+        "    print(\"str1은 거짓입니다.\")\n",
+        "\n",
+        "if str2:\n",
+        "    print(\"str2는 참입니다.\")\n",
+        "else:\n",
+        "    print(\"str2는 거짓입니다.\")\n",
+        "# 결론: 문자열에서 빈문자열은 거짓으로 평가되며, 비어있지 않은 모든 문자열은 참으로 평가"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nDxnD_E4r8jc",
+        "outputId": "c9f3570c-2944-4dc3-f7f2-0c6715d40737"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "str1은 거짓입니다.\n",
+            "str2는 참입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list1 = []\n",
+        "list2 = [1, 2, 3]\n",
+        "\n",
+        "if list1:\n",
+        "    print(\"list1은 참입니다.\")\n",
+        "else:\n",
+        "    print(\"list1은 거짓입니다.\")\n",
+        "\n",
+        "if list2:\n",
+        "    print(\"list2는 참입니다.\")\n",
+        "else:\n",
+        "    print(\"list2는 거짓입니다.\")\n",
+        "\n",
+        "# 결론: 비어있는 리스트 / 튜플 / 세트는 거짓으로 평가되며, 비어있지 않은 경우는 True로 인식"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "73nqrcIFsEKz",
+        "outputId": "7299ecf6-c004-404c-c2df-51e64dc5d74a"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "list1은 거짓입니다.\n",
+            "list2는 참입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dict1 = {}\n",
+        "dict2 = {'name': 'Alice', 'age': 25}\n",
+        "\n",
+        "if dict1:\n",
+        "    print(\"dict1은 참입니다.\")\n",
+        "else:\n",
+        "    print(\"dict1은 거짓입니다.\")\n",
+        "\n",
+        "# 결론: 빈 사전은 거짓으로 평가되고, 비어있지 않은 사전은 참으로 평가된다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "V8IVvfWasPaW",
+        "outputId": "6b397113-4bf1-4b81-af6b-d0b01940b10c"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "dict1은 거짓입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#함수"
+      ],
+      "metadata": {
+        "id": "x0NmWvJEw4Rn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 함수는 입력값을 가지고 어떤 일을 수행한 다음에 그 결과물을 내어놓는 것\n",
+        "# 그렇다면 우리는 왜 함수를 사용할까?\n",
+        "# 반복되는 부분이 있을 경우 '반복적으로 사용되는 가치 있는 부분'을 한 뭉치로 묶어서 '어떤 값을 주었을 때 어떤 결과값을 돌려준다'라는 식의 함수로 작성\n",
+        "# 프로그램의 흐름 파악과 오류 지점 찾기에 용이하다"
+      ],
+      "metadata": {
+        "id": "1t6HZAnssUvk"
+      },
+      "execution_count": 29,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 함수 안에서 선언한 변수의 효력 범위\n",
+        "# 함수 안에서 사용할 변수의 이름을 함수 밖에서도 동일하게 사용한다면?\n",
+        "a = 1\n",
+        "def vartest(a):\n",
+        "  a = a + 1\n",
+        "vartest(a)\n",
+        "print(a)\n",
+        "\n",
+        "# 함수 안에서 새로 만든 매개변수는 함수 안에서만 사용하는 '함수만의 변수'이기 때문이다.\n",
+        "# 즉, 매개변수 a는 함수 안에서만 사용되는 변수로, 함수 밖의 변수 a가 아니라는 점을 유의해야 한다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3drw74NPx4CB",
+        "outputId": "bd4e356a-0aff-4423-af68-626e442172c9"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##재귀함수"
+      ],
+      "metadata": {
+        "id": "FGBi4wpmzHVH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 사용자 입력 도맡은 input() 함수\n",
+        "number = input(\"정수를 입력하세요\")\n",
+        "if type(number) == int:\n",
+        "  print(\"%d는 정수입니다.\" %number)\n",
+        "else:\n",
+        "  print(\"정수를 입력해주세요\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VuLfZik7y8dk",
+        "outputId": "ccf856cb-60f7-4f7f-a82b-6448e3922d28"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "정수를 입력하세요\n",
+            "정수를 입력해주세요\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# print() 사용법\n",
+        "print(\"life\", \"is\", \"too short\")\n",
+        "# 콤마를 사용하면 문자열 사이에 띄어쓰기를 할 수 있다."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jHdwazQqzeaO",
+        "outputId": "792ec791-5ca3-4303-e7a3-341bfc9d9c1d"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "life is too short\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 끝 문자 지정하기\n",
+        "for i in range(10):\n",
+        "  print(i, end = ' ')\n",
+        "# 매개변수 end를 사용하여 끝문자를 지정할 수 있다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VzTGff8b1l1n",
+        "outputId": "4b6bf412-b1d9-45e0-8004-36f070ca92f3"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 1 2 3 4 5 6 7 8 9 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 파일을 읽고쓰기\n",
+        "# 1. 파일 생성하기\n",
+        "# 파일을 생성하기 위해 파이썬 내장 함수 open 사용\n",
+        "# 기본구조 : 파일 객체 = open(파일이름, 파일열기모드)\n",
+        "# R: 읽기모드 (파일 읽기만 가능)\n",
+        "# W: 쓰기모드 (파일에 내용을 쓸 수 있음)\n",
+        "# A: 추가모드 (파일의 마지막에 새로운 내용을 추가할 때 사용)\n",
+        "\n",
+        "# with문 : 파일을 열고 닫는 것을 자동으로 처리해주는 문법\n",
+        "# with open(\"foo.txt\", \"w\") as f:\n",
+        "#   f.write(\"Life is too short, you need python\")"
+      ],
+      "metadata": {
+        "id": "gNYLThtv1wOr"
+      },
+      "execution_count": 34,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#클래스"
+      ],
+      "metadata": {
+        "id": "R5JiDWhN4Spm"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 클래스: 똑같은 무언가를 계속해서 만들어 낼 수 있는 설계 도면\n",
+        "# 객체: 클래스로 만든 피조물\n",
+        "# 쉽게 이야기하면 마들렌틀이 클래스, 틀에 구워진 마들렌이 객체이다\n",
+        "# 그렇다면 클래스로 만든 객체의 특징은?\n",
+        "# 객체는 각자의 고유 성격을 가지며 동일한 클래스로 만든 객체들은 서로 다른 영향을 주지 않는다.\n",
+        "# 똑같은 반죽으로 만들더라도 마들렌 틀에 구우면, 마들렌으로 휘낭시에 틀에 구우면 휘낭시에가 된다구!\n",
+        "\n",
+        "# 클래스의 상속\n",
+        "# 어떤 클래스를 만들 때 다른 클래스의 기능을 물려받을 수 있게 만든 것이 바로 클래스!"
+      ],
+      "metadata": {
+        "id": "-8fjdZPE4Uj3"
+      },
+      "execution_count": 36,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#모듈과 예외처리"
+      ],
+      "metadata": {
+        "id": "CnvNNqqr43T7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 모듈: 함수나 변수 또는 클래스를 모아 놓은 파일을 의미한다\n",
+        "# 다른 파이썬 프로그램에서 불러와 사용할 수 있게끔 만든 파이썬 파일이다"
+      ],
+      "metadata": {
+        "id": "4B_jWtbH34a8"
+      },
+      "execution_count": 45,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 모듈을 불러오는 방법\n",
+        "# 1. import 모듈이름 (이때 확장자는 제거)\n",
+        "# (예) import mod1.py 가 아니라 import mod1 이 옳은 문법\n",
+        "# 2. from 모듈이름 import 모듈함수 : 모듈에서 특정 함수만 가져오고자 할 때\n",
+        "# (예) from mod1 import add (mod1에서 add 함수만 데리고 와줘!)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qGijh3Qc5DdA",
+        "outputId": "c43dba81-1e4f-4adf-8f8a-fbeac5b202f4"
+      },
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3 6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#예외처릴"
+      ],
+      "metadata": {
+        "id": "0odQ-evs66H-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 예외처리기법 : try ~ except 구문\n",
+        "try:\n",
+        "  ...\n",
+        "except:\n",
+        "  ...\n",
+        "# 오류 종류에 상관없이 오류가 발생하면 except 블록을 수행한다\n",
+        "\n",
+        "# 2. 발생 오류만 포함하는 방법\n",
+        "# 미리 정해놓은 오류 이름과 '같은' 경우에만 except 블록을 수행하고자 할 때 사용\n",
+        "try:\n",
+        "  ...\n",
+        "except 발생오류:\n",
+        "  ..."
+      ],
+      "metadata": {
+        "id": "mP6Xo86h5IWe"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 일부로 오류를 발생시키기 - raise 명령어 사용\n",
+        "class bird:\n",
+        "  def fly(self):\n",
+        "    raise NotImplementedError\n",
+        "  \n",
+        "\n",
+        "\n",
+        "class Eagle(bird):\n",
+        "  pass\n",
+        "eagle = Eagle()\n",
+        "eagle.fly()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 336
+        },
+        "id": "_XJHsy3m7C3M",
+        "outputId": "a3e722a4-eef8-469b-b502-7e3d460aef5c"
+      },
+      "execution_count": 49,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NotImplementedError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNotImplementedError\u001b[0m                       Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-49-a5846092639f>\u001b[0m in \u001b[0;36m<cell line: 11>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      9\u001b[0m   \u001b[0;32mpass\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     10\u001b[0m \u001b[0meagle\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mEagle\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 11\u001b[0;31m \u001b[0meagle\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mfly\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-49-a5846092639f>\u001b[0m in \u001b[0;36mfly\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;32mclass\u001b[0m \u001b[0mbird\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m   \u001b[0;32mdef\u001b[0m \u001b[0mfly\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m     \u001b[0;32mraise\u001b[0m \u001b[0mNotImplementedError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNotImplementedError\u001b[0m: "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#내장함수"
+      ],
+      "metadata": {
+        "id": "Uw3YGxQD7yl0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 파이썬 내장함수 = import를 통해 외부 모듈을 불러오는 것과 달리 별도의 설정 없이 바로 사용할 수 있다\n",
+        "# 1. 절댓값을 반환하는 함수 : abs\n",
+        "print(abs(3))\n",
+        "print(abs(-3))\n",
+        "\n",
+        "\n",
+        "a = [1, 3, 53, 7]\n",
+        "b = [1, 83, 5, 0]\n",
+        "# 2. 반복 가능한 자료형이 모두 참이길 바라는 : all\n",
+        "# all은 하나라도 거짓이면 False를 반환한다\n",
+        "print(all(a))\n",
+        "print(all(b)) # 0을 제외한 int는 기본 속성이 True, 0은 False\n",
+        "\n",
+        "# 3. 하나라도 참이길 바라는 : any\n",
+        "print(any(a))\n",
+        "print(any(b))\n",
+        "print(any([0, \"\"])) # 둘 다 거짓을 경우에는 False를 반환"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "784NBW2M7tNs",
+        "outputId": "2988658a-ffd0-476f-8ccd-294520040201"
+      },
+      "execution_count": 51,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "3\n",
+            "True\n",
+            "False\n",
+            "True\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. chr : 아스키 코드를 입력받아 코드에 해당하는 문자로 반환\n",
+        "print(chr(91))\n",
+        "print(chr(48))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IqViegi076rq",
+        "outputId": "45e64a08-7140-47e1-87b9-34491484a7c3"
+      },
+      "execution_count": 52,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[\n",
+            "0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. divmod(a, b) : a를 b로 나눈 몫과 나머지를 튜플 형태로 반환\n",
+        "print(divmod(7, 2))\n",
+        "print(divmod(30, 5)) # 나머지가 0인 경우는 생략이 아닌 숫자 0을 반환"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7YRLM3388s8g",
+        "outputId": "4b224f6b-c430-4614-e669-69e45e8d418d"
+      },
+      "execution_count": 53,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(3, 1)\n",
+            "(6, 0)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. enumerate(x) : 순서 있는 자료형(= 리스트, 튜플, 문자열)을 입력받아 인덱스 값을 포함하는 객처로 변환\n",
+        "for i, name in enumerate(['body', 'foot', 'hand']):\n",
+        "  print(i, name)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nO9qqv7x86V4",
+        "outputId": "58f44381-1ced-47a8-9b33-43bfe3876c43"
+      },
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 body\n",
+            "1 foot\n",
+            "2 hand\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 7. eval(expression) : 실행 가능한 문자열을 입력받아 문자열을 실행한 결과값으로 반환\n",
+        "print(eval('2 + 4'))\n",
+        "# print(eval('hello' + 'a'))  주어진 문자열 코드를 파이썬 코드로 해석하여 실행하므로 문자열은 불가 \n",
+        "print(eval('divmod(3, 2)'))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XZmuJ7PZ9S4I",
+        "outputId": "f6c0c7ad-f9ea-49cc-8341-338816f7289b"
+      },
+      "execution_count": 56,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n",
+            "(1, 1)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 8. filter(f, iteralbe) : iterable 함수가 f에 입력되었을 때 반환 값이 참인 것만 묶어서 반환\n",
+        "def positive(x):\n",
+        "  return x > 0\n",
+        "print(list(filter(positive, [1, 2, -3, 0, 6, -5])))\n",
+        "\n",
+        "# lambda도 가능\n",
+        "print(list(filter(lambda x: x>0,[1, 2, -3, 0, 6, -5] )))\n",
+        "\n",
+        "# vs. map(f, iterable)\n",
+        "numbers = [1, 2, 3, 4, 5, 6]\n",
+        "\n",
+        "# filter 사용 예시\n",
+        "even_numbers = list(filter(lambda x: x % 2 == 0, numbers))\n",
+        "print(even_numbers)\n",
+        "\n",
+        "# map 사용 예시\n",
+        "squared_numbers = list(map(lambda x: x ** 2, numbers))\n",
+        "print(squared_numbers)\n",
+        "\n",
+        "# 결론\n",
+        "# filter = 주어진 함수를 컬렉션의 각 요소에 적용하여 참(True)을 반환하는 요소만 필터링하여 새로운 이터레이터를 생성\n",
+        "# map = 주어진 함수를 컬렉션의 각 요소에 적용하여 새로운 이터레이터를 생성(이 때, 함수는 요소를 변환한 결과를 반환)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RE-ohGWn9iJs",
+        "outputId": "362ad79a-a8aa-47f7-c2bc-ba0e6bc65ae4"
+      },
+      "execution_count": 61,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 6]\n",
+            "[1, 2, 6]\n",
+            "[2, 4, 6]\n",
+            "[1, 4, 9, 16, 25, 36]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 9. hex(x) : 정수 값을 입력받아 16진수로 반환\n",
+        "print(hex(123))\n",
+        "print(hex(4))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hnuJpqAq-G2v",
+        "outputId": "3adc8592-3108-4f00-c53d-c7d008f2f426"
+      },
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0x7b\n",
+            "0x4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 10. range([start,] stop [,step])\n",
+        "print(list(range(4))) # stop 옵션만 지정 : 이 경우 0부터 시작해서 4-1까지 1의 간격으로 출력\n",
+        "print(list(range(4, 10))) # start과 step 옵션만 지정 : 이 경우 4부터 시작해서 10 -1 까지 1 간격으로 출력\n",
+        "print(list(range(1, 8, 2))) # 1부터 7까지 2의 간격으로\n",
+        "print(list(range(0, 8, -1))) # 음수의 간격은 불가능하므로 아무것도 출력되지 않는다"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yHtTn80A-wRL",
+        "outputId": "9b3b340c-5a88-4d05-d498-0940a15c898b"
+      },
+      "execution_count": 63,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3]\n",
+            "[4, 5, 6, 7, 8, 9]\n",
+            "[1, 3, 5, 7]\n",
+            "[]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 11. round\n",
+        "print(round(4.6))\n",
+        "print(round(5.2))\n",
+        "print(round(5.126347,2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cCOzpBZuAce_",
+        "outputId": "5e5927a5-46a3-4494-96ad-aa3147599ed5"
+      },
+      "execution_count": 64,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "5\n",
+            "5.13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 12. sorted(literable)\n",
+        "print(sorted([3, 2, 1]))\n",
+        "print(sorted(('a', 'z', 'e')))\n",
+        "print(sorted(\"zero\")) # sorted 안에 있는 값은 하나씩 쪼개져서 리스트 형태로 반환된다.\n",
+        "print(sorted((2, 7, 3)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kIzcYjX0AnNg",
+        "outputId": "20605a0a-0413-42bc-d861-b7d880506514"
+      },
+      "execution_count": 65,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3]\n",
+            "['a', 'e', 'z']\n",
+            "['e', 'o', 'r', 'z']\n",
+            "[2, 3, 7]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 13. zip\n",
+        "print(zip([1, 2, 3], [4, 5, 6]))\n",
+        "print(zip([1, 2, 3], [4, 5, 6], [7, 8, 9]))\n",
+        "print(zip(\"abc\", \"def\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DGOrBamJA1OH",
+        "outputId": "79e1d73d-936c-4e5b-c8b1-4e692cd6f10f"
+      },
+      "execution_count": 66,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<zip object at 0x7f29f65bd5c0>\n",
+            "<zip object at 0x7f29f65bee00>\n",
+            "<zip object at 0x7f29f65f5ac0>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#라이브러리"
+      ],
+      "metadata": {
+        "id": "VxZLuj3KBMT_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 라이브러리: 전 세계의 파이썬 사용자들이 만든 유용한 프로그램을 모아 놓은 곳"
+      ],
+      "metadata": {
+        "id": "rT9Z3NX2BIzC"
+      },
+      "execution_count": 67,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import time\n",
+        "time.time()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2ZJATh5VBUoK",
+        "outputId": "a5278b5f-17ca-4268-8ac5-4b3877c87da7"
+      },
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1686395797.842918"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 69
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "time.localtime(time.time())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RXNHCxzjBYNp",
+        "outputId": "cf63c4ed-05ca-4e99-e485-20242e71c588"
+      },
+      "execution_count": 70,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "time.struct_time(tm_year=2023, tm_mon=6, tm_mday=10, tm_hour=11, tm_min=16, tm_sec=54, tm_wday=5, tm_yday=161, tm_isdst=0)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 70
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "time.ctime()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "T9ZdIcU6Bf5K",
+        "outputId": "b04d018c-fcfc-4ea4-d39f-47d59a749999"
+      },
+      "execution_count": 71,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Sat Jun 10 11:17:03 2023'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 71
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import time\n",
+        "for i in range(10):\n",
+        "  print(i)\n",
+        "  time.sleep(1) # 1초 간격으로 숫자가 출력"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yasowg45BiHx",
+        "outputId": "8489a5a3-54be-491d-f49d-fce050d2f1fa"
+      },
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import calendar\n",
+        "calendar.prmonth(2022, 3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VUY9fyVxBmtS",
+        "outputId": "c58e03b5-d94e-4287-8240-aeca111c4d82"
+      },
+      "execution_count": 79,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     March 2022\n",
+            "Mo Tu We Th Fr Sa Su\n",
+            "    1  2  3  4  5  6\n",
+            " 7  8  9 10 11 12 13\n",
+            "14 15 16 17 18 19 20\n",
+            "21 22 23 24 25 26 27\n",
+            "28 29 30 31\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import calendar\n",
+        "calendar.weekday(2023, 6, 22)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NRlnKpS-Bypx",
+        "outputId": "059f9b20-bc6f-443f-9c2a-fec1ad25a8a5"
+      },
+      "execution_count": 80,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 80
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import calendar\n",
+        "calendar.monthrange(2023, 1)\n",
+        "# 6은 1월 1일의 요일이 며칠인지 (월~일 = 0~6)\n",
+        "# 31일은 며칠까지 있는지를 나타냄"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nNLIvOaYCtvs",
+        "outputId": "5f92ef23-e325-4125-e5d3-457e76b38222"
+      },
+      "execution_count": 81,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6, 31)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 81
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 난수를 발생시키는 모듈\n",
+        "import random\n",
+        "random.random() # 0.0 ~ 1.0 사이의 실수 중 난수 생성"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gvLAiuPsCxOu",
+        "outputId": "fb5699cb-2859-4333-f51a-2ebfdcb1fb28"
+      },
+      "execution_count": 82,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.05549908400353132"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 82
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "random.randint(1, 10) # int는 정수이므로 randint(a, b) 는 a ~ b사이의 정수를 반환"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Wle0qSujDBwN",
+        "outputId": "3ae62082-4adc-4f3b-caf4-5fd1d4f9b03e"
+      },
+      "execution_count": 83,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "10"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 83
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "random.randint(1, 10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8Y3uGRayDKJP",
+        "outputId": "62216018-3f25-4ad9-deda-85edfd201e1b"
+      },
+      "execution_count": 85,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "7"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 85
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "data = [1, 3, 5, 7, 9]\n",
+        "random.shuffle(data)\n",
+        "data"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cfXnLgLvDRd_",
+        "outputId": "e7b74b90-27c2-4fe8-c34c-47ed202463db"
+      },
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[7, 1, 9, 5, 3]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 88
+        }
+      ]
+    }
+  ]
+}
